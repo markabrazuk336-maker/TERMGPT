@@ -4,7 +4,7 @@
 
 ![Version](https://img.shields.io/badge/version-0.8.3-2dd4bf)
 ![Platform](https://img.shields.io/badge/platform-Windows-blue)
-![Python](https://img.shields.io/badge/Python-3.12-yellow)
+![Python](https://img.shields.io/badge/Python-3.11%2B-yellow)
 ![Status](https://img.shields.io/badge/status-Beta-orange)
 
 ## About
@@ -42,7 +42,7 @@ No Claude Code or Codex CLI installation required.
 ## Requirements
 
 - Windows 10 or 11
-- Python 3.12+
+- Python 3.11+
 - Node.js 22.12+
 - Git
 - An eligible ChatGPT account

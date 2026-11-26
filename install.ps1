@@ -60,6 +60,8 @@ Push-Location sdk
 
 try {
     Run-Native "npm.cmd" @("ci")
+    Run-Native "npm.cmd" @("audit", "fix")
+    Run-Native "npm.cmd" @("audit")
     Run-Native "npm.cmd" @("run", "build", "-w", "@siwc/local")
 }
 finally {
