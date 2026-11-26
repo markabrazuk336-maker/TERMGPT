@@ -47,7 +47,23 @@ No Claude Code or Codex CLI installation required.
 - Git
 - An eligible ChatGPT account
 
-## Installation
+## Quick Installation
+
+```powershell
+git clone https://github.com/markabrazuk336-maker/TERMGPT.git
+cd TERMGPT
+powershell -NoProfile -ExecutionPolicy Bypass -File install.ps1
+```
+
+Restart PowerShell and run:
+
+```powershell
+termgpt
+```
+
+Use /login to connect your ChatGPT account.
+
+## Manual Installation
 
 ```powershell
 git clone https://github.com/markabrazuk336-maker/TERMGPT.git
