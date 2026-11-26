@@ -2,23 +2,28 @@
 
 ## Supported Versions
 
-TERMGPT is currently in beta.
+TERMGPT v0.8.4 is an experimental beta release.
 
-## Reporting a Vulnerability
+## Reporting Vulnerabilities
 
-Please report security vulnerabilities privately.
-Do not publish credentials, tokens or exploit details in public issues.
+Report vulnerabilities privately through GitHub Security.
+Do not include credentials or tokens in public issues.
 
-## Security Limitations
+## Security Model
 
-- TERMGPT does not provide a complete security sandbox.
-- Automatic approval can execute commands with user permissions.
-- Full Access can inspect files outside the workspace.
-- File contents and command output may be sent to ChatGPT.
-- Local conversation history is not encrypted.
-- Do not run TERMGPT as administrator.
+- TERMGPT is not a security sandbox.
+- Shell commands execute with current user permissions.
+- Full Access enables inspection outside the workspace.
+- Automatic approval may execute actions without confirmation.
+- File contents and command outputs may be sent to ChatGPT.
+- Conversation history is stored locally without encryption.
+- Authentication credentials use Windows DPAPI.
+- Never run TERMGPT as administrator.
 
-## Authentication
+Use Manual Mode and Workspace Access for untrusted projects.
 
-TERMGPT uses the OpenAI Sign in with ChatGPT DevKit.
-Local credential encryption uses Windows DPAPI.
+## Dependencies
+
+The OpenAI SDK source revision is pinned.
+Dependencies are checked using npm audit during installation.
+This does not guarantee the absence of vulnerabilities.

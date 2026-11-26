@@ -2,7 +2,7 @@
 
 > Your personal AI coding agent, powered by ChatGPT.
 
-![Version](https://img.shields.io/badge/version-0.8.3-2dd4bf)
+![Version](https://img.shields.io/badge/version-0.8.4-2dd4bf)
 ![Platform](https://img.shields.io/badge/platform-Windows-blue)
 ![Python](https://img.shields.io/badge/Python-3.11%2B-yellow)
 ![Status](https://img.shields.io/badge/status-Beta-orange)
@@ -132,3 +132,12 @@ noncommercial license. OpenAI service terms also apply.
 
 TERMGPT is an independent project and is not affiliated
 with or endorsed by OpenAI.
+
+
+## Project License
+
+Original TERMGPT code is licensed under the MIT License.
+The separately installed OpenAI SDK has its own license.
+Use of ChatGPT remains subject to applicable OpenAI terms.
+
+- https://openai.com/policies/sign-in-with-chatgpt-terms/

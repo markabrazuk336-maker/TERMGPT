@@ -1,39 +1,47 @@
 # Changelog
 
-## Unreleased - v0.8.4
+## v0.8.4 - Public Beta
 
-- Automated Windows installer
-- SDK version pinning
-- SDK dependency security audit
-- Python 3.11 compatibility
-- Security documentation
+### Added
+- Smart Retry for temporary backend failures.
+- Automated Windows installer.
+- SDK source revision pinning.
+- MIT license for original TERMGPT code.
+- Security policy.
+- Multiline command handling.
+
+### Fixed
+- SDK dependency security audit.
+- Python 3.11 compatibility.
+- Multiple pasted diagnostic commands.
+- Temporary backend overload handling.
 
 ## v0.8.3
 
-- Disk usage inspection
-- UTF-8 interface fix
+- Disk usage inspection.
+- UTF-8 interface restoration.
 
 ## v0.8.2
 
-- Persistent Full Access settings
-- Automatic external file inspection
+- Persistent Full Access settings.
+- Automatic external file inspection.
 
 ## v0.8.1
 
-- Full filesystem access mode
-- Drive enumeration
+- Full Access Mode.
+- Drive enumeration.
 
 ## v0.8.0
 
-- Global CLI command
-- Persistent sessions
-- File attachments
-- File path autocompletion
+- Global CLI.
+- Persistent sessions.
+- File attachments.
+- Path autocomplete.
 
 ## v0.7.0
 
-- Task manager
-- File backups
-- Undo support
-- File diffs
-- Planning mode
+- Task manager.
+- File backups.
+- Undo support.
+- Colored file diffs.
+- Planning mode.

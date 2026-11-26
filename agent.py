@@ -1,3 +1,4 @@
+from retry import smart_retry
 from access import disk_usage
 import json
 from access import list_drives, protected_path
@@ -101,6 +102,7 @@ class Agent:
         self.history = []
         self.tasks = TaskManager()
 
+    @smart_retry
     def call(self, command, payload=None):
         data = None
 

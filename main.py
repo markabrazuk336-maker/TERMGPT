@@ -200,21 +200,51 @@ def help_menu():
 
 banner()
 
+from collections import deque
+pending_commands = deque()
+
 while True:
     try:
         autosave()
-        text = prompt(
-            HTML('<style fg="#2dd4bf"><b>❯</b></style> '),
-            history=history,
-            completer=DynamicCompleter(command_completer),
-            complete_while_typing=True,
-            bottom_toolbar=lambda: toolbar(agent, engine),
-            style=Style.from_dict({
-                "bottom-toolbar": "bg:#161b22 #dddddd",
-                "completion-menu.completion": "bg:#161b22 #dddddd",
-                "completion-menu.completion.current": "bg:#008b8b #ffffff"
-            })
-        ).strip()
+        if pending_commands:
+            text = pending_commands.popleft()
+        else:
+            text = prompt(
+                HTML('<style fg="#2dd4bf"><b>❯</b></style> '),
+                history=history,
+                completer=DynamicCompleter(command_completer),
+                complete_while_typing=True,
+                bottom_toolbar=lambda: toolbar(agent, engine),
+                style=Style.from_dict({
+                    "bottom-toolbar": "bg:#161b22 #dddddd",
+                    "completion-menu.completion": "bg:#161b22 #dddddd",
+                    "completion-menu.completion.current": "bg:#008b8b #ffffff"
+                })
+            ).strip()
+
+            pasted = [
+                line.strip()
+                for line in text.splitlines()
+                if line.strip()
+            ]
+
+            if len(pasted) > 1 and text.startswith("/"):
+                safe_commands = {
+                    "/help", "/status", "/models",
+                    "/pwd", "/ls", "/sessions",
+                    "/tasks", "/drives",
+                    "/auto off", "/access workspace"
+                }
+
+                if all(cmd in safe_commands for cmd in pasted):
+                    pending_commands.extend(pasted[1:])
+                    text = pasted[0]
+                else:
+                    console.print(
+                        "[yellow]Enter action commands separately.[/yellow]"
+                    )
+                    continue
+
 
         if not text:
             continue
@@ -449,33 +479,9 @@ while True:
 
             console.print(table)
 
-        elif text == "/access":
-            console.print(
-                "Access mode: " + engine.access_mode.upper()
-            )
 
-        elif text == "/access full":
-            console.print(
-                "[bold yellow]FULL ACCESS allows inspection "
-                "of files outside the workspace.[/bold yellow]"
-            )
 
-            if prompt("Enable full access? [y/N]: ").lower() == "y":
-                engine.access_mode = "full"
-                console.print("[green]Full Access: ON[/green]")
 
-        elif text == "/access workspace":
-            engine.access_mode = "workspace"
-            console.print("[cyan]Workspace Access: ON[/cyan]")
-
-        elif text == "/drives":
-            table = Table(title="Available Drives")
-            table.add_column("Drive", style="cyan")
-
-            for drive in list_drives():
-                table.add_row(drive)
-
-            console.print(table)
 
         elif text == "/login":
             console.print(agent.login())

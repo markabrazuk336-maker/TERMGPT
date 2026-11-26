@@ -64,7 +64,7 @@ def banner(agent, engine):
     )
 
     console.print(
-        "  Version 0.8.3 | Professional Edition\n",
+        "  Version 0.8.4 | Professional Edition\n",
         style="#64748b"
     )
 

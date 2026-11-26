@@ -16,7 +16,7 @@ function Run-Native {
 Clear-Host
 
 Write-Host "====================================" -ForegroundColor Cyan
-Write-Host "      TERMGPT INSTALLER v0.8.3      " -ForegroundColor Cyan
+Write-Host "      TERMGPT INSTALLER v0.8.4      " -ForegroundColor Cyan
 Write-Host "====================================" -ForegroundColor Cyan
 
 $root = $PSScriptRoot
