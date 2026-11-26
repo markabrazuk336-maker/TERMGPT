@@ -56,6 +56,11 @@ if (-not (Test-Path "sdk\.git")) {
     )
 }
 
+
+$sdkCommit = "0a36fefeb913055c8c7a1a29b63d82b96b2e841a"
+
+Run-Native "git" @("-C", "sdk", "checkout", "--detach", $sdkCommit)
+
 Push-Location sdk
 
 try {
