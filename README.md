@@ -50,7 +50,7 @@ No Claude Code or Codex CLI installation required.
 ## Installation
 
 ```powershell
-git clone YOUR_REPOSITORY_URL
+git clone https://github.com/markabrazuk336-maker/TERMGPT.git
 cd TERMGPT
 
 py -m venv .venv
