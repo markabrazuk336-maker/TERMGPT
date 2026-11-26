@@ -1,0 +1,62 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+
+# Node.js
+node_modules/
+dist/
+npm-debug.log*
+
+# Credentials and secrets
+.env
+.env.*
+*.key
+*.pem
+*.pfx
+*.p12
+*.token
+*credentials*.json
+*secrets*.json
+auth/
+local.key
+
+# Personal data
+.history
+settings.json
+conversation.json
+active.txt
+sessions/
+logs/
+*.log
+
+# Local backups
+backups/
+*_backup.*
+*_v0*.py
+*_v0*.mjs
+ui_encoding_backup.py
+
+# External OpenAI SDK
+/sdk/
+
+# Local gateway
+/gateway/
+
+# IDE
+.vscode/
+.idea/
+
+# Windows and macOS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Build artifacts
+build/
+*.exe
+*.msi
+*.spec
